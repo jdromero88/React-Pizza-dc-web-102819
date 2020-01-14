@@ -9,7 +9,7 @@
     {
       "id": 2,
       "topping": "Pepperoni",
-      "size": "Small",
+      "size": "Medium",
       "vegetarian": false
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": 5,
       "topping": "Bacon",
-      "size": "Medium",
+      "size": "Large",
       "vegetarian": false
     },
     {
@@ -65,6 +65,12 @@
       "size": "Large",
       "vegetarian": false,
       "id": 11
+    },
+    {
+      "topping": "Pepperoniiiiiiiiiiiiiiiiii",
+      "size": "Large",
+      "vegetarian": false,
+      "id": 12
     }
   ]
 }

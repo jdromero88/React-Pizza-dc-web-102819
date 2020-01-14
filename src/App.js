@@ -20,31 +20,41 @@ class App extends Component {
   }
 
   handleClick = pizzaToEdit => {
-    console.log(pizzaToEdit)
+    // console.log(pizzaToEdit)
+    if (pizzaToEdit === false) return
     this.setState({pizzaToEdit})
   }
 
   submitPizza = e => {
     e.preventDefault()
     if(this.state.pizzaToEdit !== ''){
-      console.log('i need to submi the pizza', this.state.pizzaToEdit)
-      let newPizza = this.state.pizzaToEdit
+      console.log('I need to submi the pizza', this.state.pizzaToEdit)
+      let editPizza = this.state.pizzaToEdit
       let confObj = {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
           'Content-Type':'application/json',
           Accept:'application/json'
         },
         body: JSON.stringify({
-          topping: newPizza.topping,
-          size: newPizza.size,
-          vegetarian: newPizza.vegetarian
+          topping: editPizza.topping,
+          size: editPizza.size,
+          vegetarian: editPizza.vegetarian
         })
       }
-      fetch(`${URL}/${newPizza.id}/edit`, confObj)
+      fetch(`${URL}/${editPizza.id}`, confObj)
       .then(res => res.json())
       .then(pizza => console.log(pizza))
       .catch(err => console.warn(err.message))
+      let pEdited = this.state.showPizzas.map(p => {
+      if(p.id === editPizza.id){
+        p = editPizza
+      }
+      return p
+      })
+      // console.log('Hello im new ',pEdited)
+      this.setState({showPizzas: pEdited
+      })
     }else {
       alert('Must select a pizza to edit!')
     }
