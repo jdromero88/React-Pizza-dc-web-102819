@@ -33,13 +33,13 @@
     {
       "id": 6,
       "topping": "Spinach",
-      "size": "Medium",
+      "size": "Small",
       "vegetarian": true
     },
     {
       "id": 7,
       "topping": "Black Olive",
-      "size": "Medium",
+      "size": "Small",
       "vegetarian": true
     },
     {

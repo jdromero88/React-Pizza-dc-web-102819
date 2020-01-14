@@ -20,13 +20,13 @@ const PizzaForm = (props) => {
         </div>
         <div className="col">
           <div className="form-check">
-            <input className="form-check-input" type="radio" name='veggie' value={true} onChange={props.handleVegetarian} checked={null/*vegetarian*/}/>
+            <input className="form-check-input" type="radio" name='veggie' value={true} onChange={props.handleVegetarian} checked={vegetarian/*null*/}/>
             <label className="form-check-label">
               Vegetarian
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" name='veggie' value={false} onChange={props.handleVegetarian} checked={null/*!vegetarian*/}/>
+            <input className="form-check-input" type="radio" name='veggie' value={false} onChange={props.handleVegetarian} checked={!vegetarian/*null*/}/>
             <label className="form-check-label">
               Not Vegetarian
             </label>
